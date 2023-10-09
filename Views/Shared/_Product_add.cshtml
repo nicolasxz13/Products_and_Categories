@@ -1,0 +1,35 @@
+@using Products_and_Categories.Models
+@model Product_CategoryView
+
+<h1>@Model.Product.Name</h1>
+<div class="midleblock">
+    <div class="Columblock">
+        <p>Categories</p>
+        <div class="listblock">
+            @foreach (Category result in @Model.Product.Categories)
+            {
+                <p>@result.Name</p>
+            }
+        </div>
+    </div>
+    <div class="Columblock">
+        <form asp-action="AddProduct" asp-controller="ProductC" asp-route-id="@Model.Product.Productid">
+            <div class="block blockcolum">
+                <label asp-for="CategoryID">Add Category</label>
+                <select asp-for="CategoryID">
+                    @foreach (Category result in @Model.Categories)
+                    {
+                        <option value="@result.CategoryId">@result.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="block">
+                <span asp-validation-for="CategoryID"></span>
+            </div>
+            <div class="block">
+                <button type="submit" class="btn1 btnend">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

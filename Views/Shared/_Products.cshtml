@@ -1,0 +1,16 @@
+@using Products_and_Categories.Models
+@model List<Product>
+
+@{
+    Html.ViewData.TemplateInfo.HtmlFieldPrefix = "Product";
+}
+
+<div class="Columblock">
+    <p>All Products</p>
+    <div class="listblock">
+        @foreach (Product result in @Model)
+        {
+            <a asp-action="Show" asp-controller="ProductC" asp-route-id="@result.Productid">@result.Name</a>
+        }
+    </div>
+</div>

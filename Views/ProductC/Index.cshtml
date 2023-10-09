@@ -1,0 +1,9 @@
+@using Products_and_Categories.Models
+@model ProductView
+<div>
+    @await Html.PartialAsync("_Nav")
+    <div class="midleblock">
+        @await Html.PartialAsync("_ProductForm", @Model.Product)
+        @await Html.PartialAsync("_Products", @Model.Products)
+    </div>
+</div>

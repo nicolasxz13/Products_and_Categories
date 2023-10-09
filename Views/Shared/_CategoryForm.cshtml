@@ -1,0 +1,22 @@
+@using Products_and_Categories.Models
+@model Category
+
+@{
+    Html.ViewData.TemplateInfo.HtmlFieldPrefix = "CreateCategory";
+}
+
+<div class="Columblock">
+    <p>New Category</p>
+    <form asp-action="Create" asp-controller="CategoryC">
+        <div class="block">
+            <label asp-for="Name">Name : </label>
+            <input asp-for="Name">
+        </div>
+        <div class="block">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="block">
+            <button type="submit" class="btn1">Create</button>
+        </div>
+    </form>
+</div>

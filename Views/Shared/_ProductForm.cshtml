@@ -1,0 +1,37 @@
+@using Products_and_Categories.Models
+@model Product
+
+@{
+    Html.ViewData.TemplateInfo.HtmlFieldPrefix = "CreateProduct";
+}
+
+<div class="Columblock">
+    <p>New Product</p>
+    <form asp-action="Create" asp-controller="Product">
+        <div class="block">
+            <label asp-for="Name">Name :</label>
+            <input asp-for="Name">
+        </div>
+        <div class="block">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="block">
+            <label asp-for="Description">Description :</label>
+            <input asp-for="Description">
+
+        </div>
+        <div class="block">
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="block">
+            <label asp-for="Price">Price :</label>
+            <input asp-for="Price">
+        </div>
+        <div class="block">
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="block">
+            <button type="submit" class="btn1">Create</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,6 @@
+@using Products_and_Categories.Models
+@model Category_productView
+<div>
+    @await Html.PartialAsync("_Nav")
+    @await Html.PartialAsync("_Category_add",Model)
+</div>
